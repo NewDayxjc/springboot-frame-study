@@ -16,7 +16,7 @@
     <modules>
         <module>shiro-study</module>
         <module>sping-data-jpa-study</module>
-        <module>mybatis-plus-study</module>
+        <module>mybatis-plus-studys</module>
     </modules>
     <dependencies>
 
