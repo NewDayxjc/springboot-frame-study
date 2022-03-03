@@ -18,6 +18,7 @@
         <module>sping-data-jpa-study</module>
         <module>mybatis-plus-studys</module>
         <module>spring-security-study</module>
+        <module>spring-data-redis-study</module>
     </modules>
     <dependencies>
 
