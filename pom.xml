@@ -7,8 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-<!--        <version>2.4.5</version>-->
-        <version>2.7.0</version>
+        <version>2.4.5</version>
     </parent>
     <groupId>com.example</groupId>
     <artifactId>springbootframe-study</artifactId>
@@ -17,10 +16,8 @@
     <modules>
         <module>shiro-study</module>
         <module>sping-data-jpa-study</module>
-        <module>spring-security-study</module>        <module>mybatis-plus-studys</module>
-
-        <module>spring-data-redis-study</module>
-        <module>spring-security-study2</module>
+        <module>mybatis-plus-studys</module>
+        <module>spring-security-study</module>
     </modules>
     <dependencies>
 
