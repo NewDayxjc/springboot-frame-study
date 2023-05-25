@@ -1,16 +1,17 @@
-package com.security;
+package org.example;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 
-@SpringBootApplication
-@MapperScan("com.security.mapper")
-//@EnableGlobalMethodSecurity(securedEnabled=true,prePostEnabled = true)
+import javax.swing.*;
 
-public class SpringSecurityApplication {
+@SpringBootApplication
+@MapperScan("org.example.mapper")
+@EnableGlobalMethodSecurity(prePostEnabled = true)
+public class SpringSecurity2Application {
     public static void main(String[] args) {
-        SpringApplication.run(SpringSecurityApplication.class);
+        SpringApplication.run(SpringSecurity2Application.class,args);
     }
 }

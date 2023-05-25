@@ -1,8 +1,9 @@
-package com.security.config;
+package org.example.config;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.security.domain.User;
-import com.security.mapper.UserMapper;
+
+import org.example.domain.User;
+import org.example.mapper.UserMapper;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;

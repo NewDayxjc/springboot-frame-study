@@ -1,4 +1,4 @@
-package com.security.config;
+package org.example.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -38,28 +38,32 @@ public class SpringSecurityConfig  extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-
-        http.formLogin().loginPage("/login.html")
-                .loginProcessingUrl("/user/login")
-                .successForwardUrl("/success")
-                .failureForwardUrl("/unauth")
-//                //获取登录用户名  默认为username
-                .usernameParameter("userAccount")
-//                //获取登录密码  默认为 password
-                .passwordParameter("userPwd");
-        http.authorizeRequests()
+        http.csrf().disable()
+                .formLogin();
+//                .loginPage("/login.html")
+////                .loginProcessingUrl("/user/login")
+////                .successForwardUrl("/success")
+////                .failureForwardUrl("/unauth")
+////                //获取登录用户名  默认为username
+//                .usernameParameter("userAccount")
+//////                //获取登录密码  默认为 password
+//                .passwordParameter("userPwd");
+        http.exceptionHandling().accessDeniedPage("/unauth");
+        http
+        .authorizeRequests()
                 .antMatchers("/layui/**","/**.html") //表示配置请求路径
                 .anonymous()
-                .antMatchers("/index","/user/login")
+                .antMatchers("/index","/user/login","/unauth")
 
             .permitAll() // 指定 URL 无需保护。
-//                .antMatchers("/find").hasAuthority("admin")
-//                .antMatchers("/findAll").hasAnyAuthority("role")
+//                .antMatchers("/findAll").hasAuthority("admin")
+                .antMatchers("/find").hasAnyAuthority("role")
             .anyRequest() // 其他请求
             .authenticated(); //需要认证
 
+
         //关闭csrf
-        http.csrf().disable();
+
     }
 
     @Override

@@ -1,7 +1,5 @@
-package com.security.controller;
+package org.example.controller;
 
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,8 +21,8 @@ public class LoginController {
 //    }
 
     @PostMapping("/login")
-    public String login(String username,String password){
-        System.out.println(username+"------------"+password);
+    public String login(String userAccount,String userPwd){
+        System.out.println(userAccount+"------------"+userPwd);
         return "login";
     }
 }
